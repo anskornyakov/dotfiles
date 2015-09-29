@@ -48,7 +48,7 @@ ZSH_THEME="robbyrussell"
 plugins=(pip last-working-dir dirhisory git tmux svn rsync cp colored-man colorize jump z)
 
 # User configuration
-export EDITOR=vim
+export EDITOR=emacs
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
