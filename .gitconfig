@@ -9,3 +9,5 @@
         st = status -s
 [color]
         ui = always
+[push]
+	default = matching

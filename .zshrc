@@ -54,7 +54,9 @@ export EDITOR=emacs
 source $ZSH/oh-my-zsh.sh
 source $HOME/dotfiles/.alias
 source $HOME/dotfiles/.functions
-source $HOME/dotfiles/.yandex
+if [ -s $HOME/dotfiles/.yandex ]; then
+    source $HOME/dotfiles/.yandex
+fi
 
 path=$PATH
 path=$HOME/bin:${path}
