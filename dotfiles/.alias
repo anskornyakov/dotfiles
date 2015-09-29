@@ -1,0 +1,39 @@
+
+alias zshconfig="$EDITOR ~/.zshrc"
+alias ohmyzsh="$EDITOR ~/.oh-my-zsh/oh-my-zsh.sh"
+alias ssource="source ~/.zshrc"
+
+alias svn=~/scripts/svn_colored_st.py
+
+alias yab="ya build -r -j10"
+
+# ls
+alias ll="ls -oAhp"
+alias lr="ls -lR"
+
+alias h="history"
+# Disable sertificate check for wget.
+alias wget='wget --no-check-certificate'
+alias map="xargs -n1"
+# Pretty print the path
+alias path='echo $PATH | tr -s ":" "\n"'
+
+# zsh global aliases
+alias -g L='|& less -r -M'
+alias -g N='2>/dev/null'
+alias -g CL='|& colorize |& less -r -M'
+alias -g H='|& head -n 20'
+alias -g T='|& tail -n 20'
+alias -g G='| grep'
+
+alias ff="find / -type f -name"
+alias f.="find . -type f -name"
+alias hl="history | less"
+
+alias -g grep='grep -E -n --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
+alias s='find . | xargs grep -E -n --color=always --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
+
+# shortcuts
+alias -g lastdiff='svndiff -r PREV:COMMITTED'
+alias makestate="date +%Y%m%d-%H%M%S"
+alias -g yapaste=curl -s -i -d "syntax=${1:-plain}" --data-urlencode text@- 'https://paste.yandex-team.ru' | awk '/Location:/ { print $2 }' | sed -e 's/^http:/https:/'
