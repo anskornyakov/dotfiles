@@ -30,6 +30,9 @@ alias ff="find / -type f -name"
 alias f.="find . -type f -name"
 alias hl="history | less"
 
+alias cp='cp -i' 
+alias mv='mv -i'
+
 alias -g grep='grep -E -n --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
 alias s='find . | xargs grep -E -n --color=always --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
 
