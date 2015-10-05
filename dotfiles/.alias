@@ -4,8 +4,7 @@ alias ohmyzsh="$EDITOR ~/.oh-my-zsh/oh-my-zsh.sh"
 alias ssource="source ~/.zshrc"
 
 alias svn=~/scripts/svn_colored_st.py
-
-alias yab="ya build -r -j10"
+alias svndiff='svn diff --diff-cmd icdiff'
 
 # ls
 alias ll="ls -oAhp"
