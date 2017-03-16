@@ -100,3 +100,5 @@ fi
 
 tmux -2 attach || tmux -2 new
 
+
+source /home/anskor/.yql/shell_completion

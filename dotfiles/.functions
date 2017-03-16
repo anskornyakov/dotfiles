@@ -1,12 +1,12 @@
 
 # Colored svn diff
-function svndiff () {
-  svn diff $@ | colordiff | less -R;
-}
+#function svndiff () {
+#  svn diff $@ | colordiff | less -R;
+#}
 
 # Create a new directory and enter it
 function mk() {
-  mkdir -p "$@" && cd "$@"
+  mkdir -p -v "$@" && cd "$@"
 }
 
 # Extra many types of compressed packages

@@ -4,7 +4,7 @@ alias ohmyzsh="$EDITOR ~/.oh-my-zsh/oh-my-zsh.sh"
 alias ssource="source ~/.zshrc"
 
 alias svn=~/scripts/svn_colored_st.py
-alias svndiff='svn diff --diff-cmd icdiff'
+alias svndiff='command svn diff --diff-cmd icdiff | less'
 
 # ls
 alias ll="ls -oAhp"
@@ -18,7 +18,7 @@ alias map="xargs -n1"
 alias path='echo $PATH | tr -s ":" "\n"'
 
 # zsh global aliases
-alias -g L='|& less -r -M'
+alias -g L='| less -r -M'
 alias -g N='2>/dev/null'
 alias -g CL='|& colorize |& less -r -M'
 alias -g H='|& head -n 20'
@@ -33,9 +33,11 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 alias -g grep='grep -E -n --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
-alias s='find . | xargs grep -E -n --color=always --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
+alias s='find . | xargs grep -E -n --color=always --exclude-dir={.bzr,.cvs,.git,.hg,.svn} --exclude=\*{~,#}'
 
 # shortcuts
-alias -g lastdiff='svndiff -r PREV:COMMITTED'
+alias -g lastdiff='command svn diff -r PREV:COMMITTED --diff-cmd icdiff | less'
+alias -g lastmonth='DATE=$(date -d "$(date +%F) - 1 month" "+%F"); command svn diff -r "{$DATE}":BASE --git --diff-cmd icdiff | less'
+alias -g lastweek='DATE=$(date -d "$(date +%F) - 1 week" "+%F"); command svn diff -r "{$DATE}":BASE --git --diff-cmd icdiff | less'
 alias makestate="date +%Y%m%d-%H%M%S"
 alias -g yapaste=curl -s -i -d "syntax=${1:-plain}" --data-urlencode text@- 'https://paste.yandex-team.ru' | awk '/Location:/ { print $2 }' | sed -e 's/^http:/https:/'
